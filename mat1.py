@@ -1,0 +1,5 @@
+print("I count my caloris")
+print ("I ate today 1000 caloris")
+print ("chickens end vegetebels end coffe end  eggs")
+print (350+250+0+400)
+print("end")

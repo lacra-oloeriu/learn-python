@@ -1,0 +1,22 @@
+Intel(R) Application Accelerator Kit, CD Kit
+Chinese PRC
+Chinese Taiwan
+Danish
+Dutch
+English
+Finnish
+French Canadian
+French Standard
+German
+Italian
+Japanese
+Korean
+Norwegian
+Polish
+Portuguese Brazilian
+Portuguese Standard
+Russian
+Spanish
+Swedish
+Thai
+

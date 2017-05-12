@@ -1,0 +1,6 @@
+print("hoh old are your children?", end=' ')
+age=input()
+print("how far is she?", end=' ')
+distance=input()
+print("how muchndo you eat?", end=' ')
+amount=input()

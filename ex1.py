@@ -1,0 +1,8 @@
+print("Hello Word!")
+print("Hello Again")
+print("I like typing thid.")
+print("This is fun.")
+print("Yay!Printing.")
+print("I'd much rather you 'not'.")
+print('I "said"do not touch this.')
+#print("I do that good")
