@@ -141,8 +141,6 @@ class LaserWeaponArmory(Scene):
             return 'death'
 
 
-
-
 class TheBridge(Scene):
 
     def enter(self):
