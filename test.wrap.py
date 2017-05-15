@@ -1,0 +1,2 @@
+"Aliens have invaded a space ship and our hero has to go through a maze of rooms defeating them so he can escape into an escape pod to the planet below. The game will be more like a Zork or Adventure type game with text outputs and funny ways to die. The game will involve an engine that runs a map full of rooms or scenes.
+Each room will pr its own description when the player enters it an then tell the engine what room to run nex out of the ma."
