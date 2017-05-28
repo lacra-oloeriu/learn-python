@@ -9,7 +9,7 @@ corporation.
 The game ends if she does not get hired and all the time with a funny message.
 She neads to face here fears and not give in to initimidating questions.  
 
-##Interview stages
+## Interview stages
 - Initial screening
 - Technical interview
 - Human resources interview
