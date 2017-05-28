@@ -16,7 +16,7 @@ class PythonCours(object):
 
     def play(self):
         current_cours = self.learn_python.opening_learn()
-        last_cours = self.learn_python.next_cours
+        last_cours = self.learn_python.next_cours()
 
         while current_cours != last_cours:
             next_cours_name = current_cours.enter()
