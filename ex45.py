@@ -1,8 +1,8 @@
-from sys import exit#comentariu
+from sys import exit #comentariu
 from random import randint
 from textwrap import dedent
 
-class Stage (object):
+class Stage(object):
     def enter(self):
         print ("This stage is very important.")
         print ("Subclass it that implement enter().")
@@ -11,10 +11,9 @@ class Stage (object):
 class Engine(object):
     def __init__(self, stage_map):
         self.stage_map = stage_map
-
     def play (self):
         current_stage = self.stage_map.opening_stage()
-        last_stage = self.stage_map.next_stage("succeeded")
+        last_stage = self.stage_map.next_stage("finished")
 
         while current_stage != last_stage:
             next_stage_name = current_stage.enter()
@@ -28,7 +27,6 @@ class Price(Stage):
         " The result is amaising.",
         " Because the competiotion was verry difficult.",
         " Good job! ."
-
     ]
     def enter(self):
         print(Price.quips[randint(0,len(self.quips) -1)])
@@ -44,7 +42,7 @@ class Game(Stage):
              At the finish line you are in the 3 position .Good job!
              """))
 
-        action = input(">")
+        action = input("> ")
 
         if action == "good!":
             print(dedent("""
@@ -57,9 +55,9 @@ class Game(Stage):
                   and try to do your best
                   go go go.
                   """))
-            return'iupii'
+            return'game_stage'
 
-        elif action == "game!":
+        elif action == "hello":
             print(dedent("""
                   You start the conpetition in the 64 position
                   That isn't so nice for you.
@@ -68,7 +66,7 @@ class Game(Stage):
                   and after one more 3 tyou are in the first 10.
                   At the finis line the are in the 3 position .Good job!
                   """))
-            return 'not bad'
+            return 'price_stage'
 
         elif action =="this is not for you":
             print(dedent("""
@@ -81,11 +79,11 @@ class Game(Stage):
                   and try to do your best
                   go go go.
                   """))
-            return'faild'
+            return'rank_stage'
 
         else:
             print("DOES NOT COMPUTE!")
-            return'game_stage'
+            return'price_stage'
 
 class RankCv(Stage):
     def enter(self):
@@ -100,18 +98,18 @@ class RankCv(Stage):
                 You do not go to the international championchip in Romania
                 You wait one more year and then you go to the mondials
                 """))
-            return "not so good"
+            return "game_stage"
 
         elif action =="go to the championchip":
             print (dedent("""
                 You are finished at fourd and you have the right to go.
                 They have invided you for the championchip!
                 """))
-            return "initial_inscription";
+            return "price_stage";
 
         else:
             print ("DOES NOT COMPUTE")
-            return 'rank_cv'
+            return 'rank_stage'
 class Result(Stage):
     def enter(self):
         print (dedent("""
@@ -128,7 +126,7 @@ class Result(Stage):
                   To do three probleme and to play two game
                   Like that you caan become the next champion of the word.
                   """))
-            return 'rank_cv'
+            return 'game_stage'
 
         elif action == "step by step":
             print (dedent("""
@@ -137,16 +135,23 @@ class Result(Stage):
                   The rest is gest matematiques things.
                   """))
 
-            return 'game'
+            return 'rank_stage'
         else:
             print("DOES NOT COMPUTE!")
-            return "price"
+            return "price_stage"
+class Finished(Stage):
+
+    def enter(self):
+        print("You won! Good job.")
+        return 'finished'
 
 class Map(object):
     stages = {
-        'rank_cv': RankCv(),
-        'price':Price(),
-        'game':Game(),
+        'rank_stage': RankCv(),
+        'price_stage':Price(),
+        'game_stage':Game(),
+        'result_stage':Result(),
+        'finished': Finished(),
     }
 
     def __init__(self, start_stage):
@@ -159,6 +164,6 @@ class Map(object):
     def opening_stage(self):
         return self.next_stage(self.start_stage)
 print ("Hello from my game")
-a_map = Map('price')
+a_map = Map('rank_stage')
 a_game = Engine(a_map)
 a_game.play()
