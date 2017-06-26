@@ -4,8 +4,8 @@ except ImportError:
     from distutils.core import setup
 
 config = {
-    'description': 'My Project',
-    'author': 'My Name',
+    'description': 'I learn Python',
+    'author': 'Lacra',
     'url': 'URL to get it at.',
     'download_url': 'Where to download it.',
     'author_email': 'My email.',
