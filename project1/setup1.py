@@ -12,7 +12,7 @@ config = {
     'version': '0.1',
     'install_requires': ['nose'],
     'packages': ['NAME1'],
-    'scripts': [],
+    'scripts': [pro1.py],
     'name': 'project1'
 }
 
